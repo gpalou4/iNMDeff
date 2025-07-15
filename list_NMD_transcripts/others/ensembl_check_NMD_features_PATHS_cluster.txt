@@ -1,5 +1,0 @@
-folder_or_object,type,path_or_filename
-conversor_tables,path,/g/strcombio/fsupek_cancer1/gpalou/NMD_project/conversor_tables/ENSEMBL/
-ensembl_NMD_features,filename,ensembl_NMD_features.txt
-ensembl_v88_gtf,filename,gencode.v26.annotation.gtf
-riboseq_Bohlen,filename,riboseq_Bohlen.xlsx
