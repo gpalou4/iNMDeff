@@ -1,0 +1,7 @@
+folder_or_object,type,path_or_filename
+GTEx_names_path,path,/g/strcombio/fsupek_home/gpalou/data/GTEx/RNAseq/
+GTEx_names,filename,GTEx_tissues_clean.txt
+GTEx_NB_res_tissue_path,path,/g/strcombio/fsupek_home/gpalou/analysis_results/NMD_project/GTEx/tissues/[X]/ASE_NB_res/
+GTEx_NB_res_tissue,filename,GTEx-[X]_ASE_NB_coeff.txt
+GTEx_NB_res_list_path,path,/g/strcombio/fsupek_home/gpalou/analysis_results/NMD_project/GTEx/pantissue/
+GTEx_NB_res_list,filename,GTEx_ASE_NB_res_list.RData
