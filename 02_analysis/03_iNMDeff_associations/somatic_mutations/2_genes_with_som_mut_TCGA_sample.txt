@@ -1,0 +1,13 @@
+folder_or_object,type,path_or_filename
+conversor_tables,path,/g/strcombio/fsupek_cancer1/gpalou/NMD_project/conversor_tables/ENSEMBL/
+cancer_gene_census_updated_ensembl,filename,cancer_gene_census_updated_ensembl.tsv
+transcripts_to_remove_path,path,/g/strcombio/fsupek_cancer1/gpalou/NMD_project/transcripts_to_remove/ENSEMBL/
+transcripts_to_remove,filename,[X]_transcripts_somatic_mut_CNV.txt
+transcripts_germ_mut_path,path,/g/strcombio/fsupek_cancer1/gpalou/NMD_project/transcripts_germ_mut/ENSEMBL/
+transcripts_germ_mut,filename,[X]_transcripts_germ_mut.txt
+CNV_file_path,path,/g/strcombio/fsupek_cancer1/gpalou/TCGA_CNV_legacy/primary_tumor/
+CNV_file,filename,gdac.broadinstitute.org_[X]-TP.CopyNumber_Gistic2.Level_4.2016012800.0.0/focal_data_by_genes.txt
+CGC_somatic_mut_CNV_path,path,/g/strcombio/fsupek_cancer1/gpalou/TCGA_somatic_variants/[X1]/[X2]/
+CGC_somatic_mut_CNV,filename,[X2]_CGC_somatic_mut_CNV.txt
+TMB_TCGA_path,path,/g/strcombio/fsupek_cancer1/gpalou/TCGA_somatic_variants/
+TMB_TCGA,filename,TMB_mutations_TCGA_samples.csv
