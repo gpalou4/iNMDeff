@@ -1,4 +1,4 @@
-# iNMDeff
+# Variable efficiency of nonsense-mediated mRNA decay across human tissues, tumors and individuals
 
 This is the repository for the manuscript "_Variable efficiency of nonsense-mediated mRNA decay across human tissues, tumors and individuals_"
 
@@ -24,7 +24,7 @@ NMD efficiency is variable across human tissues, and it is additionally variable
 
 <p align="center">
   <img
-    src="./Fig1.png"            <!-- adjust the path if you placed it elsewhere -->
+    src="./Fig1.png"       
     alt="Variability and determinants of NMD efficiency across human tissues, tumors, and individuals"
     width="630">
 </p>
