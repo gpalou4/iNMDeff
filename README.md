@@ -1,6 +1,8 @@
 # Variable efficiency of nonsense-mediated mRNA decay across human tissues, tumors and individuals
 
-This is the repository for the manuscript "_Variable efficiency of nonsense-mediated mRNA decay across human tissues, tumors and individuals_"
+Repository to reproduce analysis, figures and tables of the research article titled "_Variable efficiency of nonsense-mediated mRNA decay across human tissues, tumors and individuals_"
+
+DOI: X
 
 Authors: Guillermo Palou-Márquez, and Fran Supek1,2,3
 
