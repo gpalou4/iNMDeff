@@ -17,13 +17,13 @@ Repository to reproduce analysis, figures and tables of the research article tit
     - [02_VCF_variant_annotation](https://github.com/gpalou4/iNMDeff/tree/main/01_generate_input/02_VCF_variant_annotation) --> Variant annotation using _ANNOVAR_, for GTex and TCGA germline _VCF_ files.
     - [03_NMD_gene_sets](https://github.com/gpalou4/iNMDeff/tree/main/01_generate_input/03_NMD_gene_sets) -->
         1) Checks for NMD-triggering/evading features across the v88 ENSEMBL _gtf_ annotation file: uORFs at 5'UTR and GC content at 3'UTR.
-        2) Obtains NMD gene sets, from different sourced articles
-        3) Updates gene symbol to the same current version
+        2) Obtains NMD gene sets, from different sourced articles.
+        3) Updates gene symbols to the same current version.
         4) For each NMD gene set generated above, creates different new features for the ENSEMBL transcripts (#ORFs and length, transcript length, RNA-seq TPM expression, MANE transcript) and classifies transcripts as NMD-target or controls (non NMD-target) for each gene.
         5) Chooses the best NMD-target and control transcripts for every gene across all our NMD gene sets.
     - [04_individual_NMD_efficiency](https://github.com/gpalou4/iNMDeff/tree/main/01_generate_input/04_individual_NMD_efficiency)
         1) [PTC_NMD_rules](https://github.com/gpalou4/iNMDeff/tree/main/01_generate_input/04_individual_NMD_efficiency/PTC_NMD_rules). Classifies premature termination codons (PTCs, from nonsense and indel mutations) as NMD-triggering or NMD-evading based on canonical known genomic NMD rules. Done for GTex and TCGA individuals separately. For indels, the position of the downstream generated PTC is firstly predicted.
-        2) Estimates **individual NMD efficiency (iNMDeff)** separately for [**ASE**](https://github.com/gpalou4/iNMDeff/tree/main/01_generate_input/04_individual_NMD_efficiency/ASE) and [**endogenous target gene (ETG)**](https://github.com/gpalou4/iNMDeff/tree/main/01_generate_input/04_individual_NMD_efficiency/endogenous_target_gene) methods.
+        2) Estimates **individual NMD efficiency (iNMDeff)** separately for [**ASE**](https://github.com/gpalou4/iNMDeff/tree/main/01_generate_input/04_individual_NMD_efficiency/ASE) and [**endogenous target gene (ETG)**](https://github.com/gpalou4/iNMDeff/tree/main/01_generate_input/04_individual_NMD_efficiency/endogenous_target_gene) methods (and separately for every NMD gene set).
            
 2. 
 
