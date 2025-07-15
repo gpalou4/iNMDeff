@@ -11,7 +11,7 @@ Repository to reproduce analysis, figures and tables of the research article tit
 
 # Repository structure
 
-1. [01_generate_input](https://github.com/gpalou4/iNMDeff/tree/main/01_generate_input) --> Contains code to generate all input data required for the analysis.
+1. [01_generate_input](https://github.com/gpalou4/iNMDeff/tree/main/01_generate_input) --> Generates all input data required for the **individual NMD efficiency (iNMDeff)** estimation and downstream analysis.
 
     - [01_TCGA_RNAseq_quantification](https://github.com/gpalou4/iNMDeff/tree/main/01_generate_input/01_TCGA_RNAseq_quantification) --> Nextflow pipelines for 1) RNA-seq gene/transcript-level quantification and 2) allele-specific expression (ASE) variant calling. It includes _fastq_ alignment to human genome with _STAR_, transcriptomic quantification using _RSEM_ or allele-specific expression (ASE) variant calling for germline variants using _Strelka2_ across all ~10k samples from the TCGA cohort.
     - [02_VCF_variant_annotation](https://github.com/gpalou4/iNMDeff/tree/main/01_generate_input/02_VCF_variant_annotation) --> Variant annotation using _ANNOVAR_, for GTex and TCGA germline _VCF_ files.
@@ -25,6 +25,7 @@ Repository to reproduce analysis, figures and tables of the research article tit
         1) [PTC_NMD_rules](https://github.com/gpalou4/iNMDeff/tree/main/01_generate_input/04_individual_NMD_efficiency/PTC_NMD_rules). Classifies premature termination codons (PTCs, from nonsense and indel mutations) as NMD-triggering or NMD-evading based on canonical known genomic NMD rules. Done for GTex and TCGA individuals separately. For indels, the position of the downstream generated PTC is firstly predicted.
         2) Estimates **individual NMD efficiency (iNMDeff)** separately for [**ASE**](https://github.com/gpalou4/iNMDeff/tree/main/01_generate_input/04_individual_NMD_efficiency/ASE) and [**endogenous target gene (ETG)**](https://github.com/gpalou4/iNMDeff/tree/main/01_generate_input/04_individual_NMD_efficiency/endogenous_target_gene) methods (and separately for every NMD gene set).
            
-2. 
+2. [02_analysis](https://github.com/gpalou4/iNMDeff/tree/main/02_analysis) --> Main analysis are associations of iNMDeff with genetic mutations, CNAs, survival and immunotherapy response.
+        1) [01_iNMDeff_robustness](https://github.com/gpalou4/iNMDeff/tree/main/02_analysis/01_iNMDeff_robustness) --> Assess robustness of ETG and ASE iNMDeff methods.
 
 
