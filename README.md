@@ -36,13 +36,6 @@ Note that by comparing each NMD target transcript against its paired control fro
 
 For the ASE method, the model is applied, pooling all PTCs together within a sample, for each of the 3 NMD variant sets (includes the negative control) separately, as follows:
 
-Raw_variant_allele_counts ~ NMD_target + gene_id
-
-Where:
--Raw_variant_allele_counts: represents the allele specific expression raw counts of the germline PTC.
--NMD_target : indicates whether the allele is MUT (1), thus, NMD target, or WT (0), thus, control, within the selected pair.
--gene_id : is the ENSEMBL gene ID included to adjust for between-gene differences.
-
 $$\text{RawAlleleExp} \sim \text{NegBin}(\mu, \theta)$$
 
 $$\log(\mu) = \beta_0 + \beta_1 \cdot \text{NMDtarget} + \beta_2 \cdot \text{geneID}$$
