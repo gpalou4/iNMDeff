@@ -47,4 +47,11 @@ iNMDeff is based on a negative binomial model... bla bla
        8) Survival analysis for OS and PFS (TCGA only) for untreated patients, and chemotherapy or immunotherapy treated patients separately for different cancer types, stratifying patients between High and Low iNMDeff. Includes Kaplan-Meier curves and Cox proportional hazard models.
     - [build_iNMDeff_efficiency_proxy_models](https://github.com/gpalou4/iNMDeff/tree/main/02_analysis/build_iNMDeff_efficiency_proxy_models) --> Proxy models for predicting iNMDeff based on RNA-seq gene expression data. LASSO and Ridge models were trained and validated for either GTex or TCGA cohorts. These models were used for validations in cell lines or to assess iNMDeff in external cohorts where no transcript-level expression data was available.
 
+3. [03_figures_and_tables](https://github.com/gpalou4/iNMDeff/tree/main/03_figures_and_tables) --> Scripts to reproduce main figures, supplementary figures and tables from the output generated in [02_analysis](https://github.com/gpalou4/iNMDeff/tree/main/02_analysis)
+
+# Contact
+
+For inquiries or issues please contact directly at `guillepalou4@gmail.com`
+
+
 
