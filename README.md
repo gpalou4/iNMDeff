@@ -35,24 +35,6 @@ Where:
 | **gene_id**            | ENSEMBL gene identifier.  Included as a categorical covariate to account for between-gene variability (i.e. paired-gene blocking). |
 | **length_transcript**  | Total length of the transcript (sum of exon lengths, in bp).  Controls for the bias that longer transcripts accumulate more reads. |
 
-The model can be fitted, for example, with a negative-binomial GLM in **DESeq2**:
-
-```r
-library(DESeq2)
-
-dds <- DESeqDataSetFromMatrix(
-  countData   = counts,        # rows = transcripts, cols = samples
-  colData     = coldata,       # must contain NMD_target, gene_id, length_transcript
-  design      = ~ NMD_target + gene_id + length_transcript
-)
-
-# optional: supply length as an offset rather than a covariate
-dds$log_length <- log(dds$length_transcript)      # if using an offset
-design(dds) <- ~ NMD_target + gene_id + offset(log_length)
-
-dds <- DESeq(dds)
-res <- results(dds, name = "NMD_target")
-
 
 By comparing each NMD target transcript against its paired control from the same gene, we establish an internal control. This approach effectively accounts for potential confounders affecting trans-gene expression levels. For instance, CNAs or transcription factors might alter the expression of one transcript without affecting the other. Such discrepancies are particularly pertinent if comparing transcripts across different genes. Although we already exclude genes overlapping with CNAs, this internal control further ensures the robustness of our analysis against such confounding factors.
 
