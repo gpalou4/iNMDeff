@@ -9,9 +9,38 @@ Repository to reproduce analysis, figures and tables of the research article tit
     width="630">
 </p>
 
-## Estimation of iNMDeff
+## Quantification of iNMDeff
 
-iNMDeff is based on a negative binomial model... bla bla
+To estimate  individual NMD efficiency (iNMDeff), we employed Bayesian generalized linear models, fitting a negative binomial distribution using `Stan`. This modeling was implemented via the `stan_glm` function from the `rstanarm` R package, with `family = neg_binomial_2` specified as the parameter.
+
+### Endogenous Target Gene (ETG) iNMDeff method
+
+For the ETG method, the model is applied, pooling all transcripts together within a sample, for each of the 11 NMD gene sets (includes the negative control) separately, as follows:
+
+```
+Raw_transcript_expression ~ NMD_target +  gene_id + length_transcript
+
+Where:
+-Raw_transcript_expression: represents the raw count data from RNA-seq for each transcript.
+-NMD_target : indicates whether the transcript is an NMD target (1) or the control (0) within the selected pair.
+-gene_id : is the ENSEMBL gene ID included to adjust for between-gene differences.
+-length_transcript: accounts for the total transcript length, calculated as the sum of base pairs of its exons. This adjustment is necessary to address the potential bias of more frequent read clustering in larger transcripts.
+
+```
+
+By comparing each NMD target transcript against its paired control from the same gene, we establish an internal control. This approach effectively accounts for potential confounders affecting trans-gene expression levels. For instance, CNAs or transcription factors might alter the expression of one transcript without affecting the other. Such discrepancies are particularly pertinent if comparing transcripts across different genes. Although we already exclude genes overlapping with CNAs, this internal control further ensures the robustness of our analysis against such confounding factors.
+
+For the ASE method, the model is applied, pooling all PTCs together within a sample, for each of the 3 NMD variant sets (includes the negative control) separately, as follows:
+
+Raw_variant_allele_counts ~ NMD_target + gene_id
+
+Where:
+-Raw_variant_allele_counts: represents the allele specific expression raw counts of the germline PTC.
+-NMD_target : indicates whether the allele is MUT (1), thus, NMD target, or WT (0), thus, control, within the selected pair.
+-gene_id : is the ENSEMBL gene ID included to adjust for between-gene differences.
+
+In both NMD methods, the coefficient assigned to the ‘NMD_target’ variable serves as our estimate of iNMDeff for a specific NMD variant or gene set, as well as its corresponding negative control. We reversed the direction of the raw coefficient values, so that now higher coefficients indicate greater iNMDeff, and lower coefficients indicate reduced efficiency. The final interpretation is that it is a negative log (base e) ratio of the raw expression levels of the NMD target transcripts (ETG) or MUT alleles (ASE) divided by the control transcripts (ETG) or WT alleles (ASE). For a more intuitive interpretation, one could exponentiate the coefficient to derive the ratio between NMD targets and controls. In this context, ratios above 1 would suggest lower NMD efficiency, while ratios below 1 would indicate higher NMD efficiency. It is important to note that for our analysis, we utilized the original log coefficients rather than these exponentiated ratios.
+
 
 ## Repository structure
 
