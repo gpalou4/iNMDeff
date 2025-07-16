@@ -36,18 +36,19 @@ Where:
 | **length_transcript**  | Total length of the transcript (sum of exon lengths, in bp).  Controls for the bias that longer transcripts accumulate more reads. |
 
 
-```math
-\mathrm{RawTranscriptExpression}_i
-  \sim
-  \beta_0
-  +\;
-  \beta_1\,\mathrm{NMD\_target}_i
-  +\;
-  \gamma_{g(i)}
-  +\;
-  \beta_2\,\mathrm{length\_transcript}_i
-  +\;
-  \varepsilon_i
+$$
+\mathrm{RawTranscriptExpression}_{i}
+\; \sim \;
+\beta_{0}
+\;+\;
+\beta_{1}\,\mathrm{NMD\_target}_{i}
+\;+\;
+\gamma_{g(i)}
+\;+\;
+\beta_{2}\,\mathrm{length\_transcript}_{i}
+\;+\;
+\varepsilon_{i}
+$$
 
 
 
