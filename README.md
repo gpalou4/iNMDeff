@@ -20,12 +20,6 @@ For the ETG method, the model is applied, pooling all transcripts together withi
 ```
 Raw_transcript_expression ~ NMD_target +  gene_id + length_transcript
 
-Where:
--Raw_transcript_expression: represents the raw count data from RNA-seq for each transcript.
--NMD_target : indicates whether the transcript is an NMD target (1) or the control (0) within the selected pair.
--gene_id : is the ENSEMBL gene ID included to adjust for between-gene differences.
--length_transcript: accounts for the total transcript length, calculated as the sum of base pairs of its exons. This adjustment is necessary to address the potential bias of more frequent read clustering in larger transcripts.
-
 ```
 
 | Term                   | Description                                                                                                                         |
