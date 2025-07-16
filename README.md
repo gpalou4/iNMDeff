@@ -1,6 +1,6 @@
 # Individual NMD efficiency (iNMDeff)
 
-Repository to reproduce analysis, figures and tables of the research article titled "_Variable efficiency of nonsense-mediated mRNA decay across human tissues, tumors and individuals_"
+Repository to reproduce analysis, figures and tables of the research article "_Variable efficiency of nonsense-mediated mRNA decay across human tissues, tumors and individuals_", by Guillermo Palou-Márquez and Fran Supek (2025).
 
 <p align="center">
   <img
