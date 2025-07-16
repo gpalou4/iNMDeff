@@ -41,5 +41,6 @@ Repository to reproduce analysis, figures and tables of the research article tit
        6) Somatic mutations associations (TCGA only) affecting 112 NMD-related genes + ~750 known cancer genes at pan-cancer level and by cancer type.
        7) Somatic selection analysis (TCGA only) via dN/dS method (dNdScv) of known cancer genes, with a focus in NMD-triggering PTCs affecting TSGs and stratifying patients between High and Low iNMDeff.
        8) Survival analysis for OS and PFS (TCGA only) for untreated patients, and chemotherapy or immunotherapy treated patients separately for different cancer types, stratifying patients between High and Low iNMDeff. Includes Kaplan-Meier curves and Cox proportional hazard models.
+    - [build_iNMDeff_efficiency_proxy_models](https://github.com/gpalou4/iNMDeff/tree/main/02_analysis/build_iNMDeff_efficiency_proxy_models) --> Proxy models for predicting iNMDeff based on RNA-seq gene expression data. LASSO and Ridge models were trained and validated for either GTex or TCGA cohorts. These models were used for validations in cell lines or to assess iNMDeff in external cohorts where no transcript-level expression data was available.
 
 
