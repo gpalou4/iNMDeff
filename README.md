@@ -27,16 +27,19 @@ Repository to reproduce analysis, figures and tables of the research article tit
            
 2. [02_analysis](https://github.com/gpalou4/iNMDeff/tree/main/02_analysis) --> Main analysis are iNMDeff variability and associations with genetic mutations, CNAs, survival and immunotherapy response.
     - [01_iNMDeff_robustness](https://github.com/gpalou4/iNMDeff/tree/main/02_analysis/01_iNMDeff_robustness) --> Assess robustness of ETG and ASE iNMDeff methods by different orthogonal approaches: cell lines with UPF1 KD, PRO-seq data, ASE-ETG correlations, comparison with tissue rankings from Teran et. al. (GTex only), etc.
-    - [02_iNMDeff_variability](https://github.com/gpalou4/iNMDeff/tree/main/02_analysis/02_iNMDeff_variability) --> iNMDeff variability analysis
+    - [02_iNMDeff_variability](https://github.com/gpalou4/iNMDeff/tree/main/02_analysis/02_iNMDeff_variability):
        1) Randomization tests for iNMDeff variability: Inter-Tissue iNMDeff variability deviation (ITNVD) test and Tissue iNMDeff Deviation (TND)
        2) Plot for ITNVD test
        3) General linear model (glm) to predict iNMDeff and assess variability explained by the different explanatory variables such as CNA, cancer or tissue type, sex, tumor purity, etc.
        4) Inter-individual iNMDeff variability tests
-    - [03_iNMDeff_associations](https://github.com/gpalou4/iNMDeff/tree/main/02_analysis/03_iNMDeff_associations) --> iNMDeff associations
+    - [03_iNMDeff_associations](https://github.com/gpalou4/iNMDeff/tree/main/02_analysis/03_iNMDeff_associations) --> Associations between ETG/ASE iNMDeff and genetic alterations, survival and immunotherapy response.
        1) Cell type deconvolution in brain (proportion of glia vs neuron cells)
        2) Rare variant association analysis (RVAS) of putative loss-of-function (pLoF) germline variants across all protein coding genes. This was done using SKAT-O, separately for ETG and ASE iNMDeff, for 18 matched GTex tissues and TCGA cancer types, and 3 pLoF datasets: i) One threshold involved only NMD-triggering PTC variants, and the other two additionally included the predicted deleterious missense variants using CADD scores at two different cutoffs: >= 25 (more stringent) and >= 15 (permissive).
        3) Immune infiltration analysis from TCGA and Hartwig cohorts for CD8+ cytotoxic T-cells
        4) Immunotherapy response associations for external cohorts from different cancer types. Includes survival analysis for OS and PFS, and immunotherapy response prediction by logistic regression.
-       5) Somatic CNA associations. Firstly, [sparse-PCA](https://github.com/gpalou4/iNMDeff/tree/main/02_analysis/03_iNMDeff_associations/somatic_CNAs/01_sparse_PCA_CNA) is used to obtain pan-cancer CNA principal component signatures (CNA-PCs). Secondly, associations between 86 CNA-PCs and ETG/ASE iNMDeff are found [here](https://github.com/gpalou4/iNMDeff/tree/main/02_analysis/03_iNMDeff_associations/somatic_CNAs/02_CNA_PCs_associations), with its downstream analysis to pinpoint the underlying nature of significant CNA-PCs and its potential causal genes (fine-mapping analysis).
+       5) Somatic CNA associations (TCGA only). Firstly, [sparse-PCA](https://github.com/gpalou4/iNMDeff/tree/main/02_analysis/03_iNMDeff_associations/somatic_CNAs/01_sparse_PCA_CNA) is used to obtain pan-cancer CNA principal component signatures (CNA-PCs). Secondly, associations between 86 CNA-PCs and ETG/ASE iNMDeff are found [here](https://github.com/gpalou4/iNMDeff/tree/main/02_analysis/03_iNMDeff_associations/somatic_CNAs/02_CNA_PCs_associations), with its downstream analysis to pinpoint the underlying nature of significant CNA-PCs and its potential causal genes (fine-mapping analysis).
+       6) Somatic mutations associations (TCGA only) affecting 112 NMD-related genes + ~750 known cancer genes at pan-cancer level and by cancer type.
+       7) Somatic selection analysis (TCGA only) via dN/dS method (dNdScv) of known cancer genes, with a focus in NMD-triggering PTCs affecting TSGs and stratifying patients between High and Low iNMDeff.
+       8) Survival analysis for OS and PFS (TCGA only) for untreated patients, and chemotherapy or immunotherapy treated patients separately for different cancer types, stratifying patients between High and Low iNMDeff. Includes Kaplan-Meier curves and Cox proportional hazard models.
 
 
