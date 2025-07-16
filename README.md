@@ -30,7 +30,7 @@ Raw_transcript_expression ~ NMD_target +  gene_id + length_transcript
 | **length_transcript**  | Total length of the transcript (sum of exon lengths, in bp).  Controls for the bias that longer transcripts accumulate more reads. |
 
 
-$$
+$
 \mathrm{RawTranscriptExpression}_{i}
 \; \sim \;
 \beta_{0}
@@ -42,11 +42,13 @@ $$
 \beta_{2}\,\mathrm{length\_transcript}_{i}
 \;+\;
 \varepsilon_{i}
-$$
+$
 
 
 
 By comparing each NMD target transcript against its paired control from the same gene, we establish an internal control. This approach effectively accounts for potential confounders affecting trans-gene expression levels. For instance, CNAs or transcription factors might alter the expression of one transcript without affecting the other. Such discrepancies are particularly pertinent if comparing transcripts across different genes. Although we already exclude genes overlapping with CNAs, this internal control further ensures the robustness of our analysis against such confounding factors.
+
+### Allele-Specific Expression (ASE) iNMDeff method
 
 For the ASE method, the model is applied, pooling all PTCs together within a sample, for each of the 3 NMD variant sets (includes the negative control) separately, as follows:
 
