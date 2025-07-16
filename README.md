@@ -49,15 +49,6 @@ $$
 \varepsilon_i,
 $$
 
-where  
-
-| Symbol / term | Meaning |
-|---------------|---------|
-| $\operatorname{RawTranscriptExpression}_i$ | Raw read count for transcript *i*. |
-| $\text{NMD\_target}_i$ | Indicator (1 = transcript is an NMD target; 0 = control). |
-| $\gamma_{g(i)}$ | Gene-specific effect for the gene *g* that contains transcript *i* (modeled by including *gene_id* as a categorical covariate). |
-| $\text{length\_transcript}_i$ | Total length of transcript *i* in base pairs (sum of exon lengths). |
-| $\varepsilon_i$ | Random error term (e.g. Negative-Binomial for DESeq2). |
 
 
 By comparing each NMD target transcript against its paired control from the same gene, we establish an internal control. This approach effectively accounts for potential confounders affecting trans-gene expression levels. For instance, CNAs or transcription factors might alter the expression of one transcript without affecting the other. Such discrepancies are particularly pertinent if comparing transcripts across different genes. Although we already exclude genes overlapping with CNAs, this internal control further ensures the robustness of our analysis against such confounding factors.
