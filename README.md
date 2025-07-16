@@ -9,11 +9,11 @@ Repository to reproduce analysis, figures and tables of the research article tit
     width="630">
 </p>
 
-# Estimation of iNMDeff
+## Estimation of iNMDeff
 
 iNMDeff is based on a negative binomial model... bla bla
 
-# Repository structure
+## Repository structure
 
 1. [01_generate_input](https://github.com/gpalou4/iNMDeff/tree/main/01_generate_input) --> Generates all input data required for the **individual NMD efficiency (iNMDeff)** estimation and downstream analysis.
 
@@ -49,7 +49,7 @@ iNMDeff is based on a negative binomial model... bla bla
 
 3. [03_figures_and_tables](https://github.com/gpalou4/iNMDeff/tree/main/03_figures_and_tables) --> Scripts to reproduce main figures, supplementary figures and tables from the output generated in [02_analysis](https://github.com/gpalou4/iNMDeff/tree/main/02_analysis)
 
-# Contact
+## Contact
 
 For inquiries or issues please contact directly at `guillepalou4@gmail.com`
 
