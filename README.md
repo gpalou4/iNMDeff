@@ -1,6 +1,8 @@
 # Individual NMD efficiency (iNMDeff)
 
-Repository to reproduce analysis, figures and tables of the research article "_Variable efficiency of nonsense-mediated mRNA decay across human tissues, tumors and individuals_", by Guillermo Palou-Márquez and Fran Supek (2025).
+This repository contains code to reproduce analysis, figures and tables of the research article "_Variable efficiency of nonsense-mediated mRNA decay across human tissues, tumors and individuals_", by Guillermo Palou-Márquez and Fran Supek (2025).
+
+In brief, we estimated individual NMD efficiency (iNMDeff) from matched RNA-seq and WES data via two complementary methods: endogenous target gene (ETG) and allele-specific expression (ASE) of germline premature termination codons. The framework enables systematic assessment of NMD variability across tumors, tissues and individuals, identification of genetic factors modulating NMD activity, and associations with cancer outcomes and immunotherapy response.
 
 <p align="center">
   <img
