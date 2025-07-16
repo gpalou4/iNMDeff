@@ -11,11 +11,11 @@ Repository to reproduce analysis, figures and tables of the research article tit
 
 ## Quantification of iNMDeff
 
-To estimate  individual NMD efficiency (iNMDeff), we employed Bayesian generalized linear models, fitting a negative binomial distribution using `Stan`. This modeling was implemented via the `stan_glm` function from the `rstanarm` R package, with `family = neg_binomial_2` specified as the parameter.
+To estimate  individual NMD efficiency (iNMDeff), we employed Bayesian generalized linear models, fitting a *Negative binomial GLM with log link* using `Stan`. This modeling was implemented via the `stan_glm` function from the `rstanarm` R package, with `family = neg_binomial_2` specified as the parameter.
 
 ### Endogenous Target Gene (ETG) iNMDeff method
 
-For the ETG method, a *Negative binomial GLM with log link* model is applied, pooling all transcripts together within a sample, for each of the 11 NMD gene sets (includes the negative control) separately, as follows:
+For the ETG method, the model is applied, pooling all transcripts together within a sample, for each of the 11 NMD gene sets (including the negative control) separately, as follows:
 
 $$\text{RawTranscriptExp} \sim \text{NegBin}(\mu, \theta)$$
 
@@ -28,13 +28,9 @@ $$\log(\mu) = \beta_0 + \beta_1 \cdot \text{NMDtarget} + \beta_2 \cdot \text{gen
 | **geneID**            | ENSEMBL gene identifier.  Included as a categorical covariate to account for between-gene variability. |
 | **transcriptLength**  | Total length of the transcript (sum of exon lengths, in bp).  Controls for the bias that longer transcripts accumulate more reads. |
 
+Our highest-confidence NMD targets comprise the "NMD Consensus" gene set (available at Supplementary Table S4), which includes all genes and their matched NMD target-control transcript pairs. Additional gene sets are available upon [request](https://github.com/gpalou4/iNMDeff/tree/main?tab=readme-ov-file#contact)
 
-
-
-
-
-
-By comparing each NMD target transcript against its paired control from the same gene, we establish an internal control. This approach effectively accounts for potential confounders affecting trans-gene expression levels. For instance, CNAs or transcription factors might alter the expression of one transcript without affecting the other. Such discrepancies are particularly pertinent if comparing transcripts across different genes. Although we already exclude genes overlapping with CNAs, this internal control further ensures the robustness of our analysis against such confounding factors.
+Note that by comparing each NMD target transcript against its paired control from the same gene, we establish an internal control. This approach effectively accounts for potential confounders affecting trans-gene expression levels. For instance, CNAs or transcription factors might alter the expression of one transcript without affecting the other. Such discrepancies are particularly pertinent if comparing transcripts across different genes. Although we already exclude genes overlapping with CNAs, this internal control further ensures the robustness of our analysis against such confounding factors.
 
 ### Allele-Specific Expression (ASE) iNMDeff method
 
@@ -47,8 +43,17 @@ Where:
 -NMD_target : indicates whether the allele is MUT (1), thus, NMD target, or WT (0), thus, control, within the selected pair.
 -gene_id : is the ENSEMBL gene ID included to adjust for between-gene differences.
 
-In both NMD methods, the coefficient assigned to the ‘NMD_target’ variable serves as our estimate of iNMDeff for a specific NMD variant or gene set, as well as its corresponding negative control. We reversed the direction of the raw coefficient values, so that now higher coefficients indicate greater iNMDeff, and lower coefficients indicate reduced efficiency. The final interpretation is that it is a negative log (base e) ratio of the raw expression levels of the NMD target transcripts (ETG) or MUT alleles (ASE) divided by the control transcripts (ETG) or WT alleles (ASE). For a more intuitive interpretation, one could exponentiate the coefficient to derive the ratio between NMD targets and controls. In this context, ratios above 1 would suggest lower NMD efficiency, while ratios below 1 would indicate higher NMD efficiency. It is important to note that for our analysis, we utilized the original log coefficients rather than these exponentiated ratios.
+$$\text{RawAlleleExp} \sim \text{NegBin}(\mu, \theta)$$
 
+$$\log(\mu) = \beta_0 + \beta_1 \cdot \text{NMDtarget} + \beta_2 \cdot \text{geneID}$$
+
+| Term                   | Description                                                                                                                         |
+|------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| **RawAlleleExp** | Raw read counts for each transcript (one row per transcript). |
+| **NMDtarget**         | Binary indicator: `1` = mutated/alternative allele, thus, predicted to be NMD targeted; `0` = wild-type/reference allele, thus, our control. |
+| **geneID**            | ENSEMBL gene identifier.  Included as a categorical covariate to account for between-gene variability. |
+
+In both NMD methods, the coefficient assigned to the `NMDtarget` variable serves as our estimate of **iNMDeff** for a specific NMD variant or gene set, as well as its corresponding negative control. We reversed the direction of the raw coefficient values, so that now higher coefficients indicate greater iNMDeff, and lower coefficients indicate reduced efficiency. The final interpretation is that it is a negative `log (base e)` ratio of the raw expression levels of the NMD target transcripts (ETG) or MUT alleles (ASE) divided by the control transcripts (ETG) or WT alleles (ASE). For a more intuitive interpretation, one could exponentiate the coefficient to derive the ratio between NMD targets and controls. In this context, ratios above 1 would suggest lower NMD efficiency, while ratios below 1 would indicate higher NMD efficiency. It is important to note that for our analysis, we utilized the original log coefficients rather than these exponentiated ratios.
 
 ## Repository structure
 
