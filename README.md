@@ -34,7 +34,7 @@ Note that by comparing each NMD target transcript against its paired control fro
 
 ### Allele-Specific Expression (ASE) iNMDeff method
 
-For the ASE method, the model is applied, pooling all PTCs together within a sample, for each of the 3 NMD variant sets (includes the negative control) separately, as follows:
+For the ASE method, the model is applied, pooling all germline protein termination codon (PTCs) mutations together within a sample, for each of the 3 NMD variant sets (includes the negative control) separately, as follows:
 
 $$\text{RawAlleleExp} \sim \text{NegBin}(\mu, \theta)$$
 
