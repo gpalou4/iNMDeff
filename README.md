@@ -17,16 +17,16 @@ To estimate  individual NMD efficiency (iNMDeff), we employed Bayesian generaliz
 
 For the ETG method, a *Negative binomial GLM with log link* model is applied, pooling all transcripts together within a sample, for each of the 11 NMD gene sets (includes the negative control) separately, as follows:
 
-$$\text{Raw transcript expression} \sim \text{NegBin}(\mu, \theta)$$
+$$\text{RawTranscriptExp} \sim \text{NegBin}(\mu, \theta)$$
 
-$$\log(\mu) = \beta_0 + \beta_1 \cdot \text{NMD target} + \beta_2 \cdot \text{gene id} + \beta_3 \cdot \text{log(transcript length)}$$
+$$\log(\mu) = \beta_0 + \beta_1 \cdot \text{NMDtarget} + \beta_2 \cdot \text{geneID} + \beta_3 \cdot \text{transcriptLength}$$
 
 | Term                   | Description                                                                                                                         |
 |------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
-| **Raw_transcript_expression** | Raw read counts for each transcript (one row per transcript). |
-| **NMD_target**         | Binary indicator: `1` = transcript is predicted to be an NMD target; `0` = control of the matched pair. |
-| **gene_id**            | ENSEMBL gene identifier.  Included as a categorical covariate to account for between-gene variability. |
-| **length_transcript**  | Total length of the transcript (sum of exon lengths, in bp).  Controls for the bias that longer transcripts accumulate more reads. |
+| **RawTranscriptExp** | Raw read counts for each transcript (one row per transcript). |
+| **NMDtarget**         | Binary indicator: `1` = transcript is predicted to be an NMD target; `0` = control of the matched pair. |
+| **geneID**            | ENSEMBL gene identifier.  Included as a categorical covariate to account for between-gene variability. |
+| **transcriptLength**  | Total length of the transcript (sum of exon lengths, in bp).  Controls for the bias that longer transcripts accumulate more reads. |
 
 
 
