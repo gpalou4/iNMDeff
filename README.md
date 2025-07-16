@@ -15,9 +15,11 @@ To estimate  individual NMD efficiency (iNMDeff), we employed Bayesian generaliz
 
 ### Endogenous Target Gene (ETG) iNMDeff method
 
-For the ETG method, the model is applied, pooling all transcripts together within a sample, for each of the 11 NMD gene sets (includes the negative control) separately, as follows:
+For the ETG method, a *Negative binomial GLM with log link* model is applied, pooling all transcripts together within a sample, for each of the 11 NMD gene sets (includes the negative control) separately, as follows:
 
+$$\text{Raw transcript expression} \sim \text{NegBin}(\mu, \theta)$$
 
+$$\log(\mu) = \beta_0 + \beta_1 \cdot \text{NMD target} + \beta_2 \cdot \text{gene id} + \beta_3 \cdot \text{log(transcript length)}$$
 
 | Term                   | Description                                                                                                                         |
 |------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
@@ -27,9 +29,8 @@ For the ETG method, the model is applied, pooling all transcripts together withi
 | **length_transcript**  | Total length of the transcript (sum of exon lengths, in bp).  Controls for the bias that longer transcripts accumulate more reads. |
 
 
-$$\text{Raw transcript expression} \sim \text{NMD target} + \text{gene id} + \text{transcript length}$$
 
-*Negative binomial GLM with log link*
+
 
 
 
