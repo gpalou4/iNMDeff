@@ -35,19 +35,19 @@ Where:
 | **gene_id**            | ENSEMBL gene identifier.  Included as a categorical covariate to account for between-gene variability. |
 | **length_transcript**  | Total length of the transcript (sum of exon lengths, in bp).  Controls for the bias that longer transcripts accumulate more reads. |
 
-$$
-\operatorname{RawTranscriptExpression}_i
-\; \sim\;
-\beta_0
-\;+\;
-\beta_1\,\text{NMD\_target}_i
-\;+\;
-\gamma_{g(i)}
-\;+\;
-\beta_2\,\text{length\_transcript}_i
-\;+\;
-\varepsilon_i,
-$$
+
+```math
+\mathrm{RawTranscriptExpression}_i
+  \sim
+  \beta_0
+  +\;
+  \beta_1\,\mathrm{NMD\_target}_i
+  +\;
+  \gamma_{g(i)}
+  +\;
+  \beta_2\,\mathrm{length\_transcript}_i
+  +\;
+  \varepsilon_i
 
 
 
