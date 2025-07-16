@@ -26,6 +26,12 @@ Repository to reproduce analysis, figures and tables of the research article tit
         2) Estimates **individual NMD efficiency (iNMDeff)** separately for [**ASE**](https://github.com/gpalou4/iNMDeff/tree/main/01_generate_input/04_individual_NMD_efficiency/ASE) and [**endogenous target gene (ETG)**](https://github.com/gpalou4/iNMDeff/tree/main/01_generate_input/04_individual_NMD_efficiency/endogenous_target_gene) methods (and separately for every NMD gene set).
            
 2. [02_analysis](https://github.com/gpalou4/iNMDeff/tree/main/02_analysis) --> Main analysis are associations of iNMDeff with genetic mutations, CNAs, survival and immunotherapy response.
-        1) [01_iNMDeff_robustness](https://github.com/gpalou4/iNMDeff/tree/main/02_analysis/01_iNMDeff_robustness) --> Assess robustness of ETG and ASE iNMDeff methods.
+    - [01_iNMDeff_robustness](https://github.com/gpalou4/iNMDeff/tree/main/02_analysis/01_iNMDeff_robustness) --> Assess robustness of ETG and ASE iNMDeff methods by different orthogonal approaches: cell lines with UPF1 KD, PRO-seq data, ASE-ETG correlations, comparison with tissue rankings from Teran et. al. (GTex only), etc.
+    - [02_iNMDeff_variability](https://github.com/gpalou4/iNMDeff/tree/main/02_analysis/02_iNMDeff_variability) --> iNMDeff variability analysis
+       1) Randomization tests for iNMDeff variability: Inter-Tissue iNMDeff variability deviation (ITNVD) test and Tissue iNMDeff Deviation (TND)
+       2) Plot for ITNVD test
+       3) General linear model (glm) to predict iNMDeff and assess variability explained by the different explanatory variables such as CNA, cancer or tissue type, sex, tumor purity, etc.
+       4) Inter-individual iNMDeff variability tests
+    - [03_iNMDeff_associations](https://github.com/gpalou4/iNMDeff/tree/main/02_analysis/03_iNMDeff_associations) -->
 
 
