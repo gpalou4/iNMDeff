@@ -44,7 +44,7 @@ $$\log(\mu) = \beta_0 + \beta_1 \cdot \text{NMDtarget} + \beta_2 \cdot \text{gen
 
 | Term                   | Description                                                                                                                         |
 |------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
-| **RawAlleleExp** | Raw read counts for each transcript (one row per transcript). |
+| **RawAlleleExp** | Raw read counts for each PTC allele (one row per allele). |
 | **NMDtarget**         | Binary indicator: `1` = mutated/alternative allele, thus, predicted to be NMD targeted; `0` = wild-type/reference allele, thus, our control. |
 | **geneID**            | ENSEMBL gene identifier.  Included as a categorical covariate to account for between-gene variability. |
 
